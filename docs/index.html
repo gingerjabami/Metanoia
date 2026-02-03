@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Metanoia | Solo Leveling DSA System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Metanoia • Solo Leveling System</p>
+          <h1>Daily DSA Quest Generator</h1>
+          <p class="subtitle">
+            Generate measurable daily quests, XP, and streak tracking for LeetCode performance.
+          </p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat">
+            <span class="stat-label">Streak</span>
+            <span class="stat-value" id="stat-streak">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Weekly</span>
+            <span class="stat-value" id="stat-weekly">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Total XP</span>
+            <span class="stat-value" id="stat-xp">0</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="panel">
+        <h2>Setup</h2>
+        <form id="plan-form" class="form-grid">
+          <label>
+            Target date
+            <input type="date" id="plan-date" />
+          </label>
+          <label>
+            Level
+            <input type="number" id="level" min="1" max="20" value="1" />
+          </label>
+          <label>
+            Daily streak
+            <input type="number" id="streak" min="0" max="365" value="0" />
+          </label>
+          <label>
+            Weekly streak
+            <input type="number" id="weekly" min="0" max="7" value="0" />
+          </label>
+          <button type="submit">Generate daily plan</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Daily Quests</h2>
+        <div class="quest-grid">
+          <article class="quest-column">
+            <h3>Main quests</h3>
+            <div id="main-quests" class="quest-list"></div>
+          </article>
+          <article class="quest-column">
+            <h3>Side quests</h3>
+            <div id="side-quests" class="quest-list"></div>
+          </article>
+          <article class="quest-column">
+            <h3>Bonus quests</h3>
+            <div id="bonus-quests" class="quest-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>JSON Output</h2>
+        <pre id="json-output" class="json"></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
